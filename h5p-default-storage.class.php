@@ -468,8 +468,8 @@ class H5PDefaultStorage implements \H5PFileStorage {
    * @param int $minorVersion
    * @return string Relative path
    */
-  public function getUpgradeScript($machineName, $majorVersion, $minorVersion) {
-    $library_folder = \H5PCore::libraryToFolderName( \H5PCore::loadLibrary($library->name, $library->version->major, $library->version->minor));
+  public function getUpgradeScript($library) {
+    $library_folder = \H5PCore::libraryToFolderName($library->name, $library->version->major, $library->version->minor);
     $upgrades = "/libraries/{$library_folder}/upgrades.js";
     //$upgrades = "/libraries/{$machineName}-{$majorVersion}.{$minorVersion}/upgrades.js";
     if (file_exists($this->path . $upgrades)) {

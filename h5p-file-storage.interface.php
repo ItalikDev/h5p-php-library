@@ -215,7 +215,7 @@ interface H5PFileStorage {
    * @param int $minorVersion
    * @return string Relative path
    */
-  public function getUpgradeScript($machineName, $majorVersion, $minorVersion);
+  public function getUpgradeScript($library);
 
   /**
    * Store the given stream into the given file.
