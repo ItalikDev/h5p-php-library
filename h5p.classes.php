@@ -2760,7 +2760,7 @@ class H5PCore {
    */
   public static function libraryToFolderName($library) {
     $name = $library['machineName'] ?? $library['name'];
-    $includePatchVersion = $library['patchVersionInFolderName'] ?? false;
+    $includePatchVersion = $library['patchVersionInFolderName'] || $library['patch_version_in_folder_name'] ?? false;
 
     return "{$name}-{$library['majorVersion']}.{$library['minorVersion']}" . ($includePatchVersion ? ".{$library['patchVersion']}" : '');
   }
